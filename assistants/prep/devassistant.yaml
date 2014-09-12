@@ -4,7 +4,9 @@ description: Set up environment for DevAssistant and checkout sources.
 dependencies:
 # if the user is getting DevAssistant through DevAssistant,
 # he should already have most of these, but whatever...
-- rpm: ['PyYAML', 'python-PyGithub', 'pytest', 'python-flexmock']
+- rpm: ['PyYAML', 'python-PyGithub', 'pytest', 'python-flexmock', 'python-jinja2', 'python-progress', 'python-requests', 'python-six']
+- if $py3:
+    - rpm: ['python3-PyYAML', 'python3-pytest', 'python3-flexmock', 'python3-jinja2', 'python3-progress', 'python3-requests', 'python3-six']
 
 args:
   url:
@@ -19,6 +21,10 @@ args:
     use: common_args
     help:
       Path where to checkout the repo (will be created if it does not exist).
+  py3:
+    use: common_args
+    help:
+      Include Python 3 dependencies
 
 run:
   - if not $(test -e "$path"):
