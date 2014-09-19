@@ -6,7 +6,7 @@ dependencies:
 # he should already have most of these, but whatever...
 - rpm: ['PyYAML', 'python-PyGithub', 'pytest', 'python-flexmock', 'python-jinja2', 'python-progress', 'python-requests', 'python-six']
 - if $py3:
-    - rpm: ['python3-PyYAML', 'python3-pytest', 'python3-flexmock', 'python3-jinja2', 'python3-progress', 'python3-requests', 'python3-six']
+    - rpm: ['python3-PyYAML', 'python3-github', 'python3-pytest', 'python3-flexmock', 'python3-jinja2', 'python3-progress', 'python3-requests', 'python3-six']
 
 args:
   url:
