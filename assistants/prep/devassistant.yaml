@@ -22,7 +22,7 @@ args:
     help:
       Path where to checkout the repo (will be created if it does not exist).
   py3:
-    use: common_args
+    use: python
     help:
       Include Python 3 dependencies
 
