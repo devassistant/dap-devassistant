@@ -8,5 +8,6 @@ bugreports: https://github.com/devassistant/dap-devassistant/issues
 dependencies:
   - common_args
   - python
+  - github
 description: |
     Set up environment for DevAssistant, so you can develop on DevAssistant trough DevAssistant. We have to go deeper.
