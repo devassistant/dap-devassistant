@@ -7,7 +7,7 @@ dependencies:
 
 # runtime deps first
 - if $py3:
-  - rpm: ['python3-PyGithub', 'python3-PyYAML', 'python3-dapp', 'python3-docker-py',
+  - rpm: ['python3-github', 'python3-PyYAML', 'python3-dapp', 'python3-docker-py',
           'python3-jinja2', 'python3-progress', 'python3-requests', 'python3-six']
 - else:
   - rpm: ['python-PyGithub', 'PyYAML', 'python-dapp', 'python-docker-py',
@@ -31,7 +31,7 @@ args:
     required: False
     default: https://github.com/devassistant/devassistant
   gh_fork:
-    use: common_args
+    use: github
     help: Fork DevAssistant repo on GitHub. Pass your GH username as argument if it's
           different from your system username.
   path:
