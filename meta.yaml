@@ -1,5 +1,5 @@
 package_name: devassistant
-version: 0.10.1dev
+version: 0.10.1
 license: GPLv2+
 authors: [Bohuslav Kabrda <bkabrda@redhat.com>]
 homepage: https://github.com/devassistant/dap-devassistant
