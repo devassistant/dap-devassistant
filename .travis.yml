@@ -1,0 +1,20 @@
+language: python
+python:
+- '3.4'
+install:
+- pip install devassistant
+- sudo apt-get install realpath
+- da pkg install dap
+script:
+- da twk dap pack
+- da pkg lint -w *.dap
+after_success:
+- if [ -n "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG"
+  == "devassistant/dap-devassistant" ] && [ -n "$DAPI_TOKEN" ]; then git config --global
+  devassistant.dapi.token $DAPI_TOKEN; da extra dap upload -d *.dap --agree-with-terms;
+  fi
+notifications:
+  irc: chat.freenode.net#devassistant
+env:
+  global:
+    secure: JUqbBLYrS8I69PiSAN99xA74hopJrG7lObIFcdw/sO4L2U50cJ3d7YZXRdWWY2gKbP6kPFr6FA2PraDQhydWCh+S0TqjR7dYZ2xMsMNMzgIYjTzNP3h/ieFL8tfzilOfcvZq+VoRandeKbfT9mTl+Eby0RutJd5akoGARJjrYVQ=
